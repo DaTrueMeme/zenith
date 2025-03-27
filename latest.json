@@ -1,4 +1,8 @@
 {
     "version": "B-0.0.1",
-    "changelog": "The first beta version of Zenith.\nIncludes 3 server types (vanilla, paper and fabric), aswell\n as a UPnP option for friend joining."
+    "changelog": "The first beta version of Zenith.\nIncludes 3 server types (vanilla, paper and fabric), aswell\n as a UPnP option for friend joining.",
+
+    "new": [
+        "test.txt"
+    ]
 }
