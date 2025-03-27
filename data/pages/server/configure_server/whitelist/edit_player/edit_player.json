@@ -1,0 +1,25 @@
+{
+    "elements": [
+        {
+            "type": "button",
+            "text": "Back",
+            "id": "back_button",
+            "function": "app.loadPage('server/configure_server/whitelist/whitelist')",
+            "pad": 5
+        },
+        {
+            "type": "label",
+            "text": "${selected_server}",
+            "id": "server_name_label",
+            "size": 48,
+            "pad": 5
+        },
+        {
+            "type": "label",
+            "text": "",
+            "id": "title",
+            "size": 14,
+            "pad": 20
+        }
+    ]
+}

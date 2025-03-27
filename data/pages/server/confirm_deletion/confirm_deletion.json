@@ -1,0 +1,26 @@
+{
+    "background": "data/pages/server/confirm_deletion/background.jpg",
+    "elements": [
+        {
+            "type": "label",
+            "text": "Are you sure you want to delete this server?\nThis cannot be undone.",
+            "id": "server_name_label",
+            "size": 24,
+            "pad": 20
+        },
+        {
+            "type": "button",
+            "text": "Yes",
+            "id": "yes_button",
+            "function": "deleteServer(app)",
+            "pad": 5
+        },
+        {
+            "type": "button",
+            "text": "No",
+            "id": "no_button",
+            "function": "app.loadPage('server/configure_server/configure_server')",
+            "pad": 5
+        }
+    ]
+}

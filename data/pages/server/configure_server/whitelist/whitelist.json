@@ -1,0 +1,57 @@
+{
+    "elements": [
+        {
+            "type": "button",
+            "text": "Back",
+            "id": "back_button",
+            "function": "app.loadPage('server/configure_server/configure_server')",
+            "pad": 5
+        },
+        {
+            "type": "label",
+            "text": "${selected_server}",
+            "id": "server_name_label",
+            "size": 48,
+            "pad": 5
+        },
+        {
+            "type": "label",
+            "text": "Whitelist Settings",
+            "id": "title",
+            "size": 14,
+            "pad": 20
+        },
+        {
+            "type": "switch",
+            "text": "Whitelist Enabled",
+            "id": "whitelisted",
+            "enabled": {"condition": "ServerManager.getServerProperty(app.data['selected_server'], 'white-list') == 'true'"},
+            "enable_function": "enableProp(app, 'white-list', True)",
+            "disable_function": "enableProp(app, 'white-list', False)",
+            "pad": 5
+        },
+        {
+            "type": "entry",
+            "text": "Add Player",
+            "id": "add_player",
+            "pad": 5,
+            "button": {
+                "text": "Confirm",
+                "id": "add_player_button",
+                "function": "addToWhitelist(app)",
+                "pad": 5
+            }
+        },
+        {
+            "type": "list",
+            "text": "Whitelisted Players",
+            "id": "whitelisted_list",
+            "width": 300,
+            "height": 275,
+            "pad": 5,
+            "data": {"type": "function", "function": "ServerManager.returnServerFile(app.data['selected_server'], 'whitelist.json')"},
+            "function": "app.loadPage('server/configure_server/whitelist/edit_player/edit_player')",
+            "button_text": "d['name']"
+        }
+    ]
+}

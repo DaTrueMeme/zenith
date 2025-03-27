@@ -1,0 +1,82 @@
+{
+    "background": "data/pages/server/configure_server/background.jpg",
+    "elements": [
+        {
+            "type": "button",
+            "text": "Back",
+            "id": "back_button",
+            "function": "app.loadPage('server/server')",
+            "pad": 5
+        },
+        {
+            "type": "label",
+            "text": "${selected_server}",
+            "id": "server_name_label",
+            "size": 48,
+            "pad": 5
+        },
+        {
+            "type": "label",
+            "text": "Configure The Server",
+            "id": "title",
+            "size": 14,
+            "pad": 20
+        },
+        {
+            "type": "button",
+            "text": "Upload Icon",
+            "id": "upload_icon",
+            "function": "uploadIcon(app)",
+            "pad": 5
+        },
+        {
+            "type": "button",
+            "text": "Quick Settings",
+            "id": "quick_settings",
+            "function": "app.loadPage('server/configure_server/quick_settings/quick_settings')",
+            "pad": 5
+        },
+        {
+            "type": "button",
+            "text": "Whitelist Settings",
+            "id": "whitelist_settings",
+            "function": "app.loadPage('server/configure_server/whitelist/whitelist')",
+            "pad": 5
+        },
+        {
+            "type": "button",
+            "text": "Open Server Directory",
+            "id": "open_server_dir",
+            "function": "openServerDir(app)",
+            "pad": 5
+        },
+        {
+            "type": "button",
+            "text": "Delete Server",
+            "id": "delete_server",
+            "state": {"condition": "app.data['selected_server'] not in ServerManager.running_servers"},
+            "function": "app.loadPage('server/confirm_deletion/confirm_deletion')",
+            "pad": 5
+        },
+        {
+            "type": "label",
+            "text": "MOTD Editor",
+            "id": "server_name_label",
+            "size": 14,
+            "pad": 5
+        },
+        {
+            "type": "entry",
+            "text": "MOTD",
+            "default": {"function": "ServerManager.getServerProperty(app.data['selected_server'], 'motd')"},
+            "id": "motd",
+            "pad": 5,
+            "button": {
+                "text": "Save MOTD",
+                "id": "save_motd",
+                "function": "saveMOTD(app)",
+                "pad": 5
+            }
+        }
+    ]
+}

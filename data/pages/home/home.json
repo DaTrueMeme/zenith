@@ -1,0 +1,45 @@
+{
+    "background": "data/pages/home/background.jpg",
+    "elements": [
+        {
+            "type": "label",
+            "text": "Zenith",
+            "id": "server_name_label",
+            "size": 48,
+            "pad": 20
+        },
+        {
+            "type": "button",
+            "text": "App Settings",
+            "id": "app_settings",
+            "function": "app.loadPage('app_settings/app_settings')",
+            "pad": 5
+        },
+        {
+            "type": "button",
+            "text": "New Server",
+            "id": "new_server",
+            "function": "app.loadPage('new_server/new_server')",
+            "pad": 5
+        },
+        {
+            "type": "list",
+            "text": "Servers",
+            "id": "server_list",
+            "width": 600,
+            "height": 250,
+            "pad": 5,
+            "data": {"type": "appdata", "key": "servers"},
+            "function": "app.selectServer(app.data['current_data'])",
+            "button_text": "d" 
+        },
+        {
+            "type": "button",
+            "text": "Stop All Servers",
+            "id": "stop_all_servers",
+            "state": {"condition": "len(ServerManager.running_servers) > 0"},
+            "function": "stopAll(app)",
+            "pad": 5
+        }
+    ]
+}
