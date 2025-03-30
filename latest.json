@@ -1,0 +1,8 @@
+{
+    "version": "Zenith TB0.0.3",
+	
+	"replaced": [
+		"scr/settings.py",
+		"scr/updater.py"
+	]
+}
